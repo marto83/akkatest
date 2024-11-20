@@ -1,22 +1,14 @@
-# Akka.NET WebApi Template
+# Akka.Net test project
 
-This template is designed to integrate [Akka.NET](https://getakka.net/) with ASP.NET Web APIs.
-
-See https://github.com/akkadotnet/akkadotnet-templates/blob/dev/docs/ActorTestWebApi.md for complete and current documentation on this template.
+This project is a simple test to see how many messages per second we can process with Akka.Net
 
 ## Key HTTP Routes
 
-* https://localhost:{ASP_NET_PORT}/swagger/index.html - Swagger endpoint for testing out Akka.NET-powered APIs
-* https://localhost:{ASP_NET_PORT}/healthz/akka - Akka.HealthCheck HTTP endpoint
+* https://localhost:{ASP_NET_PORT}/rewards/generate/{count} - Generate a number of acitivity messages to process
+* https://localhost:{ASP_NET_PORT}/rewards/users/{userId} - Get the number of messages processed for a user and any streaks they might have. The only possible userIds are ["123", "124", "125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140"]
 
-## Petabridge.Cmd Support
+## Testing
 
-This project is designed to work with [Petabridge.Cmd](https://cmd.petabridge.com/). For instance, if you want to check with the status of your Akka.NET Cluster, just run:
+Run the application. Post to the generate endpoint with the number of activity messages you want to create and check the console logs how long it took. 
 
-```shell
-pbm cluster show
-```
-
-> NOTE: Petabridge.Cmd binds to [0.0.0.0:9110] on all hosts by default - if you launch multiple instances of this application on the same host you'll see "socket already in use" exceptions raised by the .NET runtime. These are fine - it just means that we can't open Petabridge.Cmd again on that process.
-> 
-> You can configure the Petabridge.Cmd host to run on port 0 if you want it to be accessible across multiple instances on the same host.
+On an M1 Macbook Pro, I was able to process 1,000,000 messages in 1.5224984 seconds which means we can process a message in 0.0015224984 ms and it consumed ~ 350MB of memory. 
