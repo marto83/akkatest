@@ -17,7 +17,7 @@
   </ItemGroup>
   <!-- ASP.NET Core Package Versions -->
   <ItemGroup>
-    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.8.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
   <!-- Test Package Versions -->
