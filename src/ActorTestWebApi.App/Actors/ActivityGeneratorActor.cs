@@ -48,8 +48,9 @@ public class ActivityGeneratorActor : ReceiveActor
                 Context.GetLogger().Info("All activities processed");
                 if (startTime > 0)
                 {
-                    var endTime = Stopwatch.GetElapsedTime(startTime);
-                    Context.GetLogger().Info("Elapsed time: " + endTime);                    
+                    var endTime = Stopwatch.GetTimestamp();
+                    var timeElapsed = (endTime - startTime) / (double) Stopwatch.Frequency;
+                    Context.GetLogger().Info("Elapsed time in seconds: " + timeElapsed);                    
                 }
             }
             // Do something with the activity
