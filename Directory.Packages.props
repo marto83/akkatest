@@ -4,8 +4,8 @@
   </PropertyGroup>
   <!-- Akka.NET Package Versions -->
   <ItemGroup>
-    <PackageVersion Include="Akka" Version="1.5.28" />
-    <PackageVersion Include="Akka.Cluster.Hosting" Version="1.5.28" />
+    <PackageVersion Include="Akka" Version="1.5.32" />
+    <PackageVersion Include="Akka.Cluster.Hosting" Version="1.5.32" />
     <PackageVersion Include="Akka.Discovery.Azure" Version="1.5.27" />
     <PackageVersion Include="Akka.HealthCheck.Hosting.Web" Version="1.5.26.1" />
     <PackageVersion Include="Akka.Management" Version="1.5.27" />
